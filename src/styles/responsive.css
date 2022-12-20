@@ -1,0 +1,200 @@
+@media screen and (max-width: 1205px) {
+    .body-image {
+        width: 500px;
+        height: 500px;
+    }
+
+    .notes-input-area {
+        padding: 100px 80px 40px 80px;
+    }
+
+    .notes-input {
+        width: calc(100% - 600px);
+    }
+}
+
+@media screen and (max-width: 1192px) {
+    .notes-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .body-image {
+        width: 400px;
+        height: 400px;
+    }
+
+    .notes-input-area {
+        padding: 100px 40px 40px 40px;
+    }
+
+    .notes-input {
+        width: calc(100% - 500px);
+    }
+}
+
+@media screen and (max-width: 864px) {
+    .header-bar {
+        padding: 3px 60px;
+    }
+    .notes-container {
+        display: flex;
+        padding: 20px 60px 100px 60px;
+    }
+
+    .body-image {
+        width: 350px;
+        height: 350px;
+    }
+
+    .notes-input {
+        width: calc(100% - 400px);
+    }
+
+    .notes-app__footer {
+        padding: 15px 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .body-image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .notes-input {
+        width: calc(100% - 350px);
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .header-bar {
+        padding: 3px 40px;
+    }
+
+    .notes-container {
+        display: flex;
+        padding: 20px 40px 100px 40px;
+    }
+
+    .body-image {
+        display: none;
+    }
+
+    .notes-input-area {
+        padding: 100px 40px 40px 40px;
+    }
+
+    .notes-input {
+        width: 100%;
+    }
+
+    .notes-app__footer {
+        padding: 15px 40px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    a.header-title {
+        font-size: 40px;
+    }
+
+    .search-bar {
+        width: 200px;
+    }
+
+    .search-bar input {
+        padding: 4px 9px 4px 0;
+        font-size: 13px;
+    }
+
+    .notes-container {
+        flex-direction: column;
+    }
+
+    .notes-card {
+        width: 100%;
+    }
+
+    .notes-card:first-child,
+    .notes-card:last-child {
+        margin: 0;
+    }
+
+    .notes-card:last-child {
+        padding-top: 40px;
+    }
+
+    .modal-card {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header-bar {
+        padding: 3px 30px;
+    }
+
+    .notes-container {
+        display: flex;
+        padding: 20px 30px 100px 30px;
+    }
+
+    .notes-input-area {
+        padding: 100px 30px 40px 30px;
+    }
+
+    .notes-app__footer {
+        padding: 15px 30px;
+    }
+
+    .modal-card {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .toast {
+        top: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .toast {
+        max-width: 300px;
+        top: 50px;
+        left: 70px;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    a.header-title {
+        font-size: 35px;
+    }
+
+    .search-bar {
+        width: 170px;
+    }
+
+    .modal-card {
+        width: 300px;
+    }
+
+    .modal-card p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .toast {
+        left: 50px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .toast {
+        left: 40px;
+    }
+}
