@@ -310,14 +310,26 @@ button {
   border: 1px solid rgb(46, 204, 113);
 }
 
+.archive-button:hover {
+  background-color: rgb(46, 204, 113);
+}
+
 .unarchive-button {
   background-color: rgb(241, 196, 15, 0.3);
   border: 1px solid rgb(241, 196, 15);
 }
 
+.unarchive-button:hover {
+  background-color: rgb(241, 196, 15);
+}
+
 .delete-button {
   background-color: rgb(231, 76, 60, 0.3);
   border: 1px solid rgb(231, 76, 60);
+}
+
+.delete-button:hover {
+  background-color: rgb(231, 76, 60);
 }
 
 .notes-app__footer {
