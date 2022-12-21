@@ -361,6 +361,11 @@ button {
   line-height: 1.5;
 }
 
+.modal-card span {
+  font-weight: 700;
+  color: rgb(46, 204, 113);
+}
+
 .modal-button {
   display: flex;
   justify-content: flex-end;

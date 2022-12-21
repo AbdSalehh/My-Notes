@@ -7,7 +7,7 @@ function Modal({
         <div className="modal-container">
             <div className="modal-card">
                 <h2 className="modal-title">Konfirmasi Hapus</h2>
-                <p>{message}</p>
+                <p>Apakah anda yakin ingin menghapus catatan <span>{message}</span> ini ?, Jika yakin, silahkan klik tombol Hapus.</p>
                 {/* <p>Apakah anda yakin ingin menghapus catatan ini? 
                     Jika yakin, silahkan klik tombol Hapus.
                 </p> */}

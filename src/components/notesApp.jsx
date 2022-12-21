@@ -17,6 +17,7 @@ class NotesApp extends React.Component {
             unfilteredNotes: getInitialData(),
             showModal: false,
             confirmDelete: null,
+            message:'',
         };
 
         this.onAddNotesHandler = this.onAddNotesHandler.bind(this);
@@ -96,10 +97,13 @@ class NotesApp extends React.Component {
     }
 
     onConfirmDeleteHandler(id) {
+        const index = this.state.notes.findIndex((note) => note.id === id);
+        const message = this.state.notes[index].title;
         this.setState(() => {
             return {
                 showModal: true,
                 confirmDelete: id,
+                message: message,
             };
         });
     }
@@ -145,8 +149,7 @@ class NotesApp extends React.Component {
                     <Modal
                         onConfirm={this.onDeleteHandler}
                         onCancel={this.onCancelDeleteHandler}
-                        message="Apakah anda yakin ingin menghapus catatan ini? 
-                    Jika yakin, silahkan klik tombol Hapus."
+                        message={this.state.message}
                     />
                 )}
             </div>
