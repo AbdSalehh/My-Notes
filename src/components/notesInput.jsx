@@ -10,7 +10,11 @@ class NotesInput extends React.Component {
         this.state = {
             title: '',
             body: '',
-            titleLength: 0,
+            lettersCount: 0,
+            inputValue: '',
+            countLimit: 50,
+            loaderCompleted: 0,
+            errorLimit: false
         };
 
         this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
@@ -19,30 +23,37 @@ class NotesInput extends React.Component {
     }
 
     onTitleChangeEventHandler(event) {
-        this.setState(() => {
-            if (event.target.value.length <= 50) {
+        const inputLength = event.target.value;
+        if (inputLength.length <= this.state.countLimit) {
+            this.setState((prev) => {
                 return {
                     title: event.target.value,
-                    titleLength: event.target.value.length,
-                };
-            } else {
-                toast.error('Jumlah Karakter Lebih Dari 50', {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    className: "toast",
-                });
-                
+                    lettersCount: inputLength.length,
+                    inputValue: inputLength,
+                    errorLimit: false,
+                    loaderCompleted: Math.floor(inputLength.length / prev.countLimit * 100, 2)
+                }
+            });
+        }
+        else {
+            this.setState((prev) => {
                 return {
-                    title: event.target.value,
-                };
-            }
-        });
+                    inputValue: prev.inputValue,
+                    errorLimit: true
+                }
+            })
+            toast.error('Karakter Tidak Boleh Lebih Dari 50', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                className: "toast",
+            });
+        }
     }
 
     onBodyChangeEventHandler(event) {
@@ -83,9 +94,9 @@ class NotesInput extends React.Component {
             this.props.addNotes(this.state);
             this.setState(() => {
                 return {
-                    title: "",
                     body: "",
-                    titleLength: 0,
+                    inputValue: "",
+                    lettersCount: 0,
                 };
             });
             toast.success('Catatan Berhasil Ditambahkan', {
@@ -110,15 +121,15 @@ class NotesInput extends React.Component {
                     <div className="add-notes">Tambah Catatan</div>
                     <label>
                         <h2>Title</h2>
-                        <input type="text" placeholder="Isi Judul Catatan..." value={this.state.title} onChange={this.onTitleChangeEventHandler} />
+                        <input type="text" placeholder="Isi Judul Catatan..." value={this.state.inputValue} onChange={this.onTitleChangeEventHandler} />
                         {(() => {
-                            if (this.state.titleLength >= 40) {
+                            if (this.state.lettersCount >= 40) {
                                 return (
-                                    <p className="title-length red">Sisa Karakter : {50 - this.state.titleLength}</p>
+                                    <p className="title-length red">Sisa Karakter : {50 - this.state.lettersCount}</p>
                                 )
                             } else {
                                 return (
-                                    <p className="title-length green">Sisa Karakter : {50 - this.state.titleLength}</p>
+                                    <p className="title-length green">Sisa Karakter : {50 - this.state.lettersCount}</p>
                                 )
                             }
                         })()}
