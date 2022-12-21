@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #111315;
+  background-color: #24292d;
   color: white;
 }
 
@@ -19,7 +19,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 3px 80px;
-  background-color: #1A1D1F;
+  background-color: #323840;
   z-index: 10;
 }
 
@@ -149,7 +149,7 @@ input::placeholder, textarea::placeholder {
 
 .notes-input-area input, .notes-input-area textarea {
   width: 100%;
-  background-color: #1A1D1F;
+  background-color: #323840;
 }
 
 textarea {
@@ -262,7 +262,7 @@ button {
 }
 
 .notes-item {
-  background-color: #1A1D1F;
+  background-color: #323840;
   font-family: 'Quicksand', sans-serif;
   padding: 15px;
   border-radius: 5px;
@@ -324,7 +324,7 @@ button {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  background-color: #1A1D1F;
+  background-color: #323840;
   font-family: 'Quicksand', sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -349,7 +349,7 @@ button {
 .modal-card {
   font-family: 'Quicksand', sans-serif;
   width: 500px;
-  background-color: #1A1D1F;
+  background-color: #323840;
   padding: 20px;
   border-radius: 5px;
 }
